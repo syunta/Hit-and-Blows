@@ -1,11 +1,15 @@
 <html>
 	<head>
+
 	<title>Hit & Blows</title>
 
 	<script type="text/javascript">
 	<!--
 		function check(){
-		window.inputBox.value
+		
+		var input = window.inputBox.value;
+		window.inputBox.value ="";
+		window.output.value +=input+"\n";
 
 		}
 	// -->
@@ -18,6 +22,11 @@
 
 		<input type="text" id="inputBox">
 		<input type="button" value="try!" onclick="check()">
+		
+
+		<div>
+			<textarea id="output"></textarea>
+		</div>
 
 	</body>
 
