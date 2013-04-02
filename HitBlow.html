@@ -6,10 +6,28 @@
 	<script type="text/javascript">
 	<!--
 		function check(){
+
+			rndArray = new Array(9);
+
+			for (i=0:i<10:i++){
+				rndArray[i] = i;
+			}
 		
-		var input = window.inputBox.value;
-		window.inputBox.value ="";
-		window.output.value +=input+"\n";
+			strArray = new Array(3);
+			
+
+			for (i=0:i<4:i++){
+
+				var a = Math.floor(Math.random() * (10-i));
+			
+				var strArray[i] = rndArray[a];
+
+			}
+
+			var input = window.inputBox.value;
+
+			window.inputBox.value ="";
+			window.output.value += strArray[0]+"\n"+strArray[1]+"\n"+strArray[2]+"\n"+strArray[3];
 
 		}
 	// -->
@@ -18,7 +36,6 @@
 	</head>
 
 	<body>
-
 
 		<input type="text" id="inputBox">
 		<input type="button" value="try!" onclick="check()">
