@@ -5,12 +5,14 @@
 
 	<script type="text/javascript">
 
-		function check(){
+		function main(){
+
+			var ans = createRnd();
 
 			var input = window.inputBox.value;
 
 			window.inputBox.value ="";
-			window.output.value += createRnd()+"\n";
+			window.output.value += input+"\n" + ans+"\n" +checkHit(input,ans)+"\n";
 
 		}
 
@@ -48,6 +50,33 @@
 
 		}
 
+		function checkHit(input,ans){
+
+		var a = "";
+		var b = "";
+		var hitCount = 0;
+
+		for(var i = 0; i < 4; i++){
+
+			a = input.charAt(i);
+			b = ans.charAt(i);
+
+			if (a == b){
+
+				hitCount++;
+	
+			}
+
+		}
+
+		return hitCount;			
+
+		}
+
+		function checkBlow(){}
+
+		function printMessage(){}
+
 
 	</script>
 
@@ -56,7 +85,7 @@
 	<body>
 
 		<input type="text" id="inputBox">
-		<input type="button" value="try!" onclick="check()">
+		<input type="button" value="try!" onclick="main()">
 
 
 		<div>
