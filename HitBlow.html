@@ -52,24 +52,25 @@
 
 		function checkHit(input,ans){
 
-		var a = "";
-		var b = "";
-		var hitCount = 0;
+			var a = "";
+			var b = "";
+			var hitCount = 0;
 
-		for(var i = 0; i < 4; i++){
 
-			a = input.charAt(i);
-			b = ans.charAt(i);
+			for(var i = 0; i < 4; i++){
 
-			if (a == b){
+				a = input.charAt(i);
+				b = ans.charAt(i);
 
-				hitCount++;
+				if (a == b){
+
+					hitCount++;
+	
+				}
 	
 			}
 
-		}
-
-		return hitCount;			
+			return hitCount;			
 
 		}
 
