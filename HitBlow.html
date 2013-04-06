@@ -14,7 +14,7 @@
 			var blowCount = checkBlow(input,ans);
 
 			window.inputBox.value ="";
-			window.output.value += printMessage(hitCount,blowCount,input);
+			window.output.value += printMessage(hitCount,blowCount,input,ans);
 
 		}
 
@@ -29,7 +29,7 @@
 
 			var rndArray = new Array(4);
 
-			for (var i = 0; i < 4; i++){
+			for (var i = 0; i < rndArray.length; i++){
 
 				var a = Math.floor(Math.random() * (10-i));
 
@@ -42,7 +42,7 @@
 
 			var ans = "";
 
-			for(var i = 0; i < 4; i++){
+			for(var i = 0; i < rndArray.length; i++){
 
 				ans = ans + rndArray[i];
 
@@ -59,7 +59,7 @@
 			var hitCount = 0;
 
 
-			for(var i = 0; i < 4; i++){
+			for(var i = 0; i < ans.length; i++){
 
 				a = input.charAt(i);
 				b = ans.charAt(i);
@@ -82,12 +82,12 @@
 			var b = "";
 			var blowCount = 0;
 
-			for(var i = 0; i < 4; i++){
+			for(var i = 0; i < ans.length; i++){
 
 				a = input.charAt(i);
 				ans = ans.replace(ans.charAt(i),"");
 
-				for(var j = 0; j < 3; j++ ){
+				for(var j = 0; j < ans.length; j++ ){
 
 					b = ans.charAt(j);
 
@@ -105,11 +105,11 @@
 
 		}
 
-		function printMessage(hitCount,blowCount,input){
+		function printMessage(hitCount,blowCount,input,ans){
 
 			var message = "";
 		
-			if(hitCount == 4){
+			if(hitCount == ans.length){
 
 				message = "Great!"+"\n";			
 			
