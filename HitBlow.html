@@ -8,11 +8,13 @@
 		function main(){
 
 			var ans = createRnd();
-
 			var input = window.inputBox.value;
 
+			var hitCount  = checkHit(input,ans);
+			var blowCount = checkBlow(input,ans);
+
 			window.inputBox.value ="";
-			window.output.value += input+"\n" + ans+"\n" + checkBlow(input,ans)+"\n";
+			window.output.value += printMessage(hitCount,blowCount,input);
 
 		}
 
@@ -103,7 +105,23 @@
 
 		}
 
-		function printMessage(){}
+		function printMessage(hitCount,blowCount,input){
+
+			var message = "";
+		
+			if(hitCount == 4){
+
+				message = "Great!"+"\n";			
+			
+				} else {
+
+					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";
+				
+			}
+
+			return message;
+
+		}
 
 
 	</script>
