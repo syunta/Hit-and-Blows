@@ -12,7 +12,7 @@
 			var input = window.inputBox.value;
 
 			window.inputBox.value ="";
-			window.output.value += input+"\n" + ans+"\n" +checkHit(input,ans)+"\n";
+			window.output.value += input+"\n" + ans+"\n" + checkBlow(input,ans)+"\n";
 
 		}
 
@@ -63,9 +63,7 @@
 				b = ans.charAt(i);
 
 				if (a == b){
-
 					hitCount++;
-	
 				}
 	
 			}
@@ -74,7 +72,36 @@
 
 		}
 
-		function checkBlow(){}
+		function checkBlow(input,ans){
+
+			var ans_copy = ans;
+
+			var a = "";
+			var b = "";
+			var blowCount = 0;
+
+			for(var i = 0; i < 4; i++){
+
+				a = input.charAt(i);
+				ans = ans.replace(ans.charAt(i),"");
+
+				for(var j = 0; j < 3; j++ ){
+
+					b = ans.charAt(j);
+
+					if(a == b){
+						blowCount++;
+					}
+
+				}
+
+				ans = ans_copy;
+	
+			}
+
+			return blowCount;
+
+		}
 
 		function printMessage(){}
 
