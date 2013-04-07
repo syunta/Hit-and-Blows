@@ -5,16 +5,22 @@
 
 	<script type="text/javascript">
 
+
+		function global(){
+
+			ANSWER = createRnd();
+
+		}
+
 		function main(){
 
-			var ans = createRnd();
 			var input = window.inputBox.value;
 
-			var hitCount  = checkHit(input,ans);
-			var blowCount = checkBlow(input,ans);
+			var hitCount  = checkHit(input,ANSWER);
+			var blowCount = checkBlow(input,ANSWER);
 
 			window.inputBox.value ="";
-			window.output.value += printMessage(hitCount,blowCount,input,ans);
+			window.output.value += printMessage(hitCount,blowCount,input,ANSWER);
 
 		}
 
@@ -124,15 +130,15 @@
 		}
 
 
+
 	</script>
 
 	</head>
 
-	<body>
+	<body onLoad="global()">
 
 		<input type="text" id="inputBox">
 		<input type="button" value="try!" onclick="main()">
-
 
 		<div>
 			<textarea id="output"></textarea>
