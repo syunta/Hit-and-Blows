@@ -130,6 +130,11 @@
 		}
 
 
+		function giveUp(){
+
+			window.output.value += ANSWER+"\n";
+
+		}
 
 	</script>
 
@@ -139,6 +144,7 @@
 
 		<input type="text" id="inputBox">
 		<input type="button" value="try!" onclick="main()">
+		<input type="button" value="Give Up" onclick="giveUp()">
 
 		<div>
 			<textarea id="output"></textarea>
