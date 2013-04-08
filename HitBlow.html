@@ -100,11 +100,10 @@
 					if(a == b){
 						blowCount++;
 					}
-
 				}
 
 				ans = ans_copy;
-	
+
 			}
 
 			return blowCount;
@@ -117,12 +116,11 @@
 		
 			if(hitCount == ans.length){
 
-				message = "Great!"+"\n";			
+				message = "Great!"+"\n"+"Enjoy next game!"+"\n";
+				global();
 			
 				} else {
-
-					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";
-				
+					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";				
 			}
 
 			return message;
@@ -130,15 +128,12 @@
 		}
 
 		function giveUp(){
-
-			window.output.value += ANSWER+"\n";
-
+			window.output.value += "Answer is " + ANSWER+".\n"+"Enjoy next game."+"\n";
+			global();
 		}
 
 		function test(){
-
 			window.output.value += ANSWER+"\n";
-
 		}
 
 
