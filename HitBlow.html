@@ -5,7 +5,6 @@
 
 	<script type="text/javascript">
 
-
 		function global(){
 
 			ANSWER = createRnd();
@@ -73,7 +72,7 @@
 				if (a == b){
 					hitCount++;
 				}
-	
+
 			}
 
 			return hitCount;			
@@ -89,11 +88,11 @@
 			for(var i = 0; i < ans.length; i++){
 
 				a = input.charAt(i);
-				var ansExcept = ans.replace(ans.charAt(i),"");
+				var ansExcepted = ans.replace(ans.charAt(i),"");
 
 				for(var j = 0; j < (ans.length - 1); j++ ){
 
-					b = ansExcept.charAt(j);
+					b = ansExcepted.charAt(j);
 
 					if(a == b){
 						blowCount++;
@@ -107,12 +106,12 @@
 		function printMessage(hitCount,blowCount,input,ans){
 
 			var message = "";
-		
+
 			if(hitCount == ans.length){
 
 				message = "Great!"+"\n"+"Enjoy next game!"+"\n";
 				global();
-			
+
 				} else {
 					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";				
 			}
@@ -130,8 +129,6 @@
 			window.output.value += ANSWER+"\n";
 		}
 
-
-
 	</script>
 
 	</head>
@@ -143,11 +140,8 @@
 		<input type="button" value="Give Up" onclick="giveUp()">
 		<input type="button" value="test" onclick="test()">
 
-
 		<div>
 			<textarea id="output"></textarea>
 		</div>
-
 	</body>
-
 </html>
