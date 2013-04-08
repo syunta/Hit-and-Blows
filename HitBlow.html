@@ -82,8 +82,6 @@
 
 		function checkBlow(input,ans){
 
-			var ans_copy = ans;
-
 			var a = "";
 			var b = "";
 			var blowCount = 0;
@@ -91,23 +89,19 @@
 			for(var i = 0; i < ans.length; i++){
 
 				a = input.charAt(i);
-				ans = ans.replace(ans.charAt(i),"");
+				var ansExcept = ans.replace(ans.charAt(i),"");
 
-				for(var j = 0; j < ans.length; j++ ){
+				for(var j = 0; j < (ans.length - 1); j++ ){
 
-					b = ans.charAt(j);
+					b = ansExcept.charAt(j);
 
 					if(a == b){
 						blowCount++;
 					}
 				}
-
-				ans = ans_copy;
-
 			}
 
 			return blowCount;
-
 		}
 
 		function printMessage(hitCount,blowCount,input,ans){
