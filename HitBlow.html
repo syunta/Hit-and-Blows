@@ -21,6 +21,10 @@
 			window.inputBox.value ="";
 			window.output.value += printMessage(hitCount,blowCount,input,ANSWER);
 
+			if(input == ANSWER){
+				startNewGame();
+			}
+	
 		}
 
 		function createRnd(){
@@ -110,7 +114,6 @@
 			if(hitCount == ans.length){
 
 				message = "Great!"+"\n"+"Enjoy next game!"+"\n";
-				startNewGame();
 
 				} else {
 					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";				
