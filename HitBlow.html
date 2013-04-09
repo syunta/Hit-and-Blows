@@ -5,7 +5,7 @@
 
 	<script type="text/javascript">
 
-		function global(){
+		function startNewGame(){
 
 			ANSWER = createRnd();
 
@@ -110,7 +110,7 @@
 			if(hitCount == ans.length){
 
 				message = "Great!"+"\n"+"Enjoy next game!"+"\n";
-				global();
+				startNewGame();
 
 				} else {
 					message = "Your answer:"+ input +"\n"+ hitCount + "Hit," + blowCount + "blow."+"\n";				
@@ -122,7 +122,7 @@
 
 		function giveUp(){
 			window.output.value += "Answer is " + ANSWER+".\n"+"Enjoy next game."+"\n";
-			global();
+			startNewGame();
 		}
 
 		function test(){
@@ -133,7 +133,7 @@
 
 	</head>
 
-	<body onLoad="global()">
+	<body onLoad="startNewGame()">
 
 		<input type="text" id="inputBox">
 		<input type="button" value="challenge!" onclick="challenge()">
