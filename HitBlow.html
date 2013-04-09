@@ -63,15 +63,13 @@
 
 		function checkHit(input,ans){
 
-			var a = "";
-			var b = "";
 			var hitCount = 0;
 
 
 			for(var i = 0; i < ans.length; i++){
 
-				a = input.charAt(i);
-				b = ans.charAt(i);
+				var a = input.charAt(i);
+				var b = ans.charAt(i);
 
 				if (a == b){
 					hitCount++;
@@ -85,18 +83,16 @@
 
 		function checkBlow(input,ans){
 
-			var a = "";
-			var b = "";
 			var blowCount = 0;
 
 			for(var i = 0; i < ans.length; i++){
 
-				a = input.charAt(i);
+				var a = input.charAt(i);
 				var ansExcepted = ans.replace(ans.charAt(i),"");
 
 				for(var j = 0; j < (ans.length - 1); j++ ){
 
-					b = ansExcepted.charAt(j);
+					var b = ansExcepted.charAt(j);
 
 					if(a == b){
 						blowCount++;
