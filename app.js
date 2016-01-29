@@ -27,7 +27,7 @@ function challenge() {
   window.inputAnswer.value = "";
 
   if (input == ANSWER) {
-    printLog("Great!\nEnjoy next game!\n");
+    printLog("Great! Answer is " + ANSWER + ".\nEnjoy next game!\n");
     startNewGame();
   } else {
     printLog("Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n");
