@@ -1,7 +1,7 @@
 var ANSWER;
 
 function startNewGame() {
-  ANSWER = createRnd();
+  ANSWER = createAnswer();
 }
 
 function challenge() {
@@ -18,7 +18,7 @@ function challenge() {
   }
 }
 
-function createRnd() {
+function createAnswer() {
 
   var baseArray = new Array(10);
 
