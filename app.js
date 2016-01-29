@@ -11,7 +11,7 @@ function challenge() {
   var blowCount = checkBlow(input, ANSWER);
 
   window.inputBox.value ="";
-  window.output.value += printMessage(hitCount, blowCount, input, ANSWER);
+  window.log.value += printMessage(hitCount, blowCount, input, ANSWER);
 
   if(input == ANSWER) {
     startNewGame();
@@ -98,6 +98,6 @@ function printMessage(hitCount, blowCount, input, ans) {
 }
 
 function giveUp() {
-  window.output.value += "Answer is " + ANSWER + ".\n" + "Enjoy next game." + "\n";
+  window.log.value += "Answer is " + ANSWER + ".\n" + "Enjoy next game." + "\n";
   startNewGame();
 }
