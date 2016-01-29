@@ -4,20 +4,6 @@ function startNewGame() {
   ANSWER = createAnswer();
 }
 
-function challenge() {
-
-  var input = window.inputAnswer.value;
-  var hitCount  = checkHit(input, ANSWER);
-  var blowCount = checkBlow(input, ANSWER);
-
-  window.inputAnswer.value = "";
-  window.log.value += printLog(hitCount, blowCount, input, ANSWER);
-
-  if (input == ANSWER) {
-    startNewGame();
-  }
-}
-
 function createAnswer() {
 
   var restValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -30,6 +16,20 @@ function createAnswer() {
   }
 
   return answer;
+}
+
+function challenge() {
+
+  var input = window.inputAnswer.value;
+  var hitCount  = checkHit(input, ANSWER);
+  var blowCount = checkBlow(input, ANSWER);
+
+  window.inputAnswer.value = "";
+  window.log.value += printLog(hitCount, blowCount, input, ANSWER);
+
+  if (input == ANSWER) {
+    startNewGame();
+  }
 }
 
 function checkHit(input, answer) {
