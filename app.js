@@ -101,7 +101,3 @@ function giveUp() {
   window.output.value += "Answer is " + ANSWER + ".\n" + "Enjoy next game." + "\n";
   startNewGame();
 }
-
-function test() {
-  window.output.value += ANSWER + "\n";
-}
