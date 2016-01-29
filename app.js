@@ -30,7 +30,7 @@ function challenge() {
     printLog("Great!\nEnjoy next game!\n");
     startNewGame();
   } else {
-    printLog(makeLog(hitCount, blowCount, input));
+    printLog("Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n");
   }
 }
 
@@ -71,10 +71,6 @@ function checkBlow(input, answer) {
   }
 
   return blowCount;
-}
-
-function makeLog(hitCount, blowCount, input) {
-  return "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n";
 }
 
 function printLog(message) {
