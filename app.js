@@ -20,27 +20,16 @@ function challenge() {
 
 function createAnswer() {
 
-  var baseArray = new Array(10);
+  var restValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var answer = "";
 
-  for (var i = 0; i < baseArray.length; i++) {
-    baseArray[i] = i;
-  }
-
-  var rndArray = new Array(4);
-
-  for (var i = 0; i < rndArray.length; i++) {
+  for (var i = 0; i < 4; i++) {
     var a = Math.floor(Math.random() * (10 - i));
-    rndArray[i] = baseArray[a];
-    baseArray.splice(a, 1);
+    answer += restValues[a];
+    restValues.splice(a, 1);
   }
 
-  var ans = "";
-
-  for (var i = 0; i < rndArray.length; i++) {
-    ans = ans + rndArray[i];
-  }
-
-  return ans;
+  return answer;
 }
 
 function checkHit(input, ans) {
