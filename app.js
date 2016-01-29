@@ -32,14 +32,14 @@ function createAnswer() {
   return answer;
 }
 
-function checkHit(input, ans) {
+function checkHit(input, answer) {
 
   var hitCount = 0;
 
-  for (var i = 0; i < ans.length; i++) {
+  for (var i = 0; i < answer.length; i++) {
 
     var a = input.charAt(i);
-    var b = ans.charAt(i);
+    var b = answer.charAt(i);
 
     if (a == b) {
       hitCount++;
@@ -49,18 +49,18 @@ function checkHit(input, ans) {
   return hitCount;			
 }
 
-function checkBlow(input, ans) {
+function checkBlow(input, answer) {
 
   var blowCount = 0;
 
-  for (var i = 0; i < ans.length; i++) {
+  for (var i = 0; i < answer.length; i++) {
 
     var a = input.charAt(i);
-    var ansExcepted = ans.replace(ans.charAt(i), "");
+    var answerExcepted = answer.replace(answer.charAt(i), "");
 
-    for (var j = 0; j < (ans.length - 1); j++) {
+    for (var j = 0; j < (answer.length - 1); j++) {
 
-      var b = ansExcepted.charAt(j);
+      var b = answerExcepted.charAt(j);
 
       if (a == b) {
         blowCount++;
