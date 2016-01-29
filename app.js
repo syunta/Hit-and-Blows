@@ -10,10 +10,10 @@ function challenge() {
   var hitCount  = checkHit(input, ANSWER);
   var blowCount = checkBlow(input, ANSWER);
 
-  window.inputAnswer.value ="";
+  window.inputAnswer.value = "";
   window.log.value += printLog(hitCount, blowCount, input, ANSWER);
 
-  if(input == ANSWER) {
+  if (input == ANSWER) {
     startNewGame();
   }
 }
@@ -29,7 +29,7 @@ function createAnswer() {
   var rndArray = new Array(4);
 
   for (var i = 0; i < rndArray.length; i++) {
-    var a = Math.floor(Math.random() * (10-i));
+    var a = Math.floor(Math.random() * (10 - i));
     rndArray[i] = baseArray[a];
     baseArray.splice(a, 1);
   }
@@ -88,7 +88,7 @@ function printLog(hitCount, blowCount, input, ans) {
 
   if (hitCount == ans.length) {
 
-    message = "Great!"+"\n"+"Enjoy next game!"+"\n";
+    message = "Great!" + "\n" + "Enjoy next game!" + "\n";
 
   } else {
     message = "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow." + "\n";				
