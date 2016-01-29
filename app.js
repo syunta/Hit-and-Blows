@@ -78,7 +78,7 @@ function makeLog(hitCount, blowCount, input) {
 }
 
 function printLog(message) {
-  window.log.value += message;
+  window.log.value = message + window.log.value;
 }
 
 function giveUp() {
