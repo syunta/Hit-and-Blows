@@ -48,7 +48,7 @@ function checkHit(input, answer) {
     }
   }
 
-  return hitCount;			
+  return hitCount;
 }
 
 function checkBlow(input, answer) {
@@ -74,7 +74,7 @@ function checkBlow(input, answer) {
 }
 
 function makeLog(hitCount, blowCount, input) {
-  return "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n";				
+  return "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n";
 }
 
 function giveUp() {
