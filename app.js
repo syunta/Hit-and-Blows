@@ -25,10 +25,12 @@ function challenge() {
   var blowCount = checkBlow(input, ANSWER);
 
   window.inputAnswer.value = "";
-  window.log.value += printLog(hitCount, blowCount, input, ANSWER);
 
   if (input == ANSWER) {
+    window.log.value += "Great!\nEnjoy next game!\n";
     startNewGame();
+  } else {
+    window.log.value += makeLog(hitCount, blowCount, input);
   }
 }
 
@@ -71,22 +73,11 @@ function checkBlow(input, answer) {
   return blowCount;
 }
 
-function printLog(hitCount, blowCount, input, ans) {
-
-  var message = "";
-
-  if (hitCount == ans.length) {
-
-    message = "Great!" + "\n" + "Enjoy next game!" + "\n";
-
-  } else {
-    message = "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow." + "\n";				
-  }
-
-  return message;
+function makeLog(hitCount, blowCount, input) {
+  return "Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n";				
 }
 
 function giveUp() {
-  window.log.value += "Answer is " + ANSWER + ".\n" + "Enjoy next game." + "\n";
+  window.log.value += "Answer is " + ANSWER + ".\nEnjoy next game.\n";
   startNewGame();
 }
