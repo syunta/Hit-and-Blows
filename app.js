@@ -6,11 +6,11 @@ function startNewGame() {
 
 function challenge() {
 
-  var input = window.inputBox.value;
+  var input = window.inputAnswer.value;
   var hitCount  = checkHit(input, ANSWER);
   var blowCount = checkBlow(input, ANSWER);
 
-  window.inputBox.value ="";
+  window.inputAnswer.value ="";
   window.log.value += printMessage(hitCount, blowCount, input, ANSWER);
 
   if(input == ANSWER) {
