@@ -21,8 +21,8 @@ function createAnswer() {
 function challenge() {
 
   var input = window.inputAnswer.value;
-  var hitCount  = checkHit(input, ANSWER);
-  var blowCount = checkBlow(input, ANSWER);
+  var hits  = countHits(input, ANSWER);
+  var blows = countBlows(input, ANSWER);
 
   window.inputAnswer.value = "";
 
@@ -30,13 +30,13 @@ function challenge() {
     printLog("Great! Answer is " + ANSWER + ".\nEnjoy next game!\n");
     startNewGame();
   } else {
-    printLog("Your answer:" + input + "\n" + hitCount + "Hit," + blowCount + "blow.\n");
+    printLog("Your answer:" + input + "\n" + hits + "Hit," + blows + "blow.\n");
   }
 }
 
-function checkHit(input, answer) {
+function countHits(input, answer) {
 
-  var hitCount = 0;
+  var hits = 0;
 
   for (var i = 0; i < answer.length; i++) {
 
@@ -44,16 +44,16 @@ function checkHit(input, answer) {
     var b = answer.charAt(i);
 
     if (a == b) {
-      hitCount++;
+      hits++;
     }
   }
 
-  return hitCount;
+  return hits;
 }
 
-function checkBlow(input, answer) {
+function countBlows(input, answer) {
 
-  var blowCount = 0;
+  var blows = 0;
 
   for (var i = 0; i < answer.length; i++) {
 
@@ -65,12 +65,12 @@ function checkBlow(input, answer) {
       var b = answerExcepted.charAt(j);
 
       if (a == b) {
-        blowCount++;
+        blows++;
       }
     }
   }
 
-  return blowCount;
+  return blows;
 }
 
 function printLog(message) {
