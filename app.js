@@ -26,15 +26,14 @@ function generateAnswer() {
 function challenge() {
 
   var input = window.inputAnswer.value;
-  var hits  = countHits(input, ANSWER);
-  var blows = countBlows(input, ANSWER);
-
   window.inputAnswer.value = "";
 
   if (input == ANSWER) {
     printLog("Great! Answer is " + ANSWER + ".\nEnjoy next game!\n");
     startNewGame();
   } else {
+    var hits  = countHits(input, ANSWER);
+    var blows = countBlows(input, ANSWER);
     printLog("Your answer:" + input + "\n" + hits + "Hit," + blows + "blow.\n");
   }
 }
