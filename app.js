@@ -4,13 +4,17 @@ function startNewGame() {
   ANSWER = createAnswer();
 }
 
+function rondomInRange(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function createAnswer() {
 
   var restValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var answer = "";
 
   for (var i = 0; i < 4; i++) {
-    var a = Math.floor(Math.random() * (10 - i));
+    var a = rondomInRange(0, 10 - i);
     answer += restValues[a];
     restValues.splice(a, 1);
   }
