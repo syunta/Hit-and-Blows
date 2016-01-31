@@ -58,11 +58,10 @@ function countBlows(experiment, answer) {
   for (var i = 0; i < answer.length; i++) {
 
     var a = experiment.charAt(i);
-    var answerExcepted = answer.replace(answer.charAt(i), "");
 
-    for (var j = 0; j < (answer.length - 1); j++) {
+    for (var j = 0; j < answer.length; j++) {
 
-      var b = answerExcepted.charAt(j);
+      var b = answer.charAt(j);
 
       if (a == b) {
         blows++;
@@ -70,7 +69,7 @@ function countBlows(experiment, answer) {
     }
   }
 
-  return blows;
+  return blows - countHits(experiment, answer);
 }
 
 function printLog(message) {
