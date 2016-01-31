@@ -4,9 +4,8 @@ function startNewGame() {
   ANSWER = generateAnswer();
 }
 
-function rondomInRange(min, max) {
-  max += 1;
-  return Math.floor(Math.random() * (max - min) + min);
+function randomInRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function generateAnswer() {
@@ -15,7 +14,7 @@ function generateAnswer() {
   var answer = "";
 
   for (var i = 0; i < 4; i++) {
-    var a = rondomInRange(0, 9 - i);
+    var a = randomInRange(0, 9 - i);
     answer += restValues[a];
     restValues.splice(a, 1);
   }
