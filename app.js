@@ -1,7 +1,7 @@
 var ANSWER;
 
 function startNewGame() {
-  ANSWER = createAnswer();
+  ANSWER = generateAnswer();
 }
 
 function rondomInRange(min, max) {
@@ -9,7 +9,7 @@ function rondomInRange(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function createAnswer() {
+function generateAnswer() {
 
   var restValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var answer = "";
