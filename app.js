@@ -34,13 +34,13 @@ function challenge() {
   }
 }
 
-function countHits(input, answer) {
+function countHits(experiment, answer) {
 
   var hits = 0;
 
   for (var i = 0; i < answer.length; i++) {
 
-    var a = input.charAt(i);
+    var a = experiment.charAt(i);
     var b = answer.charAt(i);
 
     if (a == b) {
@@ -51,13 +51,13 @@ function countHits(input, answer) {
   return hits;
 }
 
-function countBlows(input, answer) {
+function countBlows(experiment, answer) {
 
   var blows = 0;
 
   for (var i = 0; i < answer.length; i++) {
 
-    var a = input.charAt(i);
+    var a = experiment.charAt(i);
     var answerExcepted = answer.replace(answer.charAt(i), "");
 
     for (var j = 0; j < (answer.length - 1); j++) {
