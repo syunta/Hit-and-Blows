@@ -5,6 +5,7 @@ function startNewGame() {
 }
 
 function rondomInRange(min, max) {
+  max += 1;
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -14,7 +15,7 @@ function createAnswer() {
   var answer = "";
 
   for (var i = 0; i < 4; i++) {
-    var a = rondomInRange(0, 10 - i);
+    var a = rondomInRange(0, 9 - i);
     answer += restValues[a];
     restValues.splice(a, 1);
   }
