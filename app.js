@@ -4,8 +4,8 @@ function startNewGame() {
   ANSWER = generateAnswer();
 }
 
-function randomInRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+function randomPositiveInteger(max) {
+  return Math.floor(Math.random() * (max + 1));
 }
 
 function generateAnswer() {
@@ -14,7 +14,7 @@ function generateAnswer() {
   var answer = "";
 
   for (var i = 0; i < 4; i++) {
-    var a = randomInRange(0, 9 - i);
+    var a = randomPositiveInteger(9 - i);
     answer += restValues[a];
     restValues.splice(a, 1);
   }
